@@ -15,9 +15,9 @@ function App() {
     setBooks([]);
 
     try {
-      // Call your backend API instead of OpenLibrary directly
+      // ✅ Correct API call
       const response = await fetch(
-        `http://localhost:5000/api/books?title=${query}`
+        `https://book-finder-backend.onrender.com/api/books?title=${query}`
       );
       const data = await response.json();
 
@@ -67,8 +67,14 @@ function App() {
               <div className="no-image">No Image</div>
             )}
             <h2>{book.title}</h2>
-            <p>{book.author_name ? book.author_name.join(", ") : "Unknown Author"}</p>
-            <small>First Published: {book.first_publish_year || "N/A"}</small>
+            <p>
+              {book.author_name
+                ? book.author_name.join(", ")
+                : "Unknown Author"}
+            </p>
+            <small>
+              First Published: {book.first_publish_year || "N/A"}
+            </small>
           </div>
         ))}
       </div>
