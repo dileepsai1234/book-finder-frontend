@@ -17,7 +17,7 @@ function App() {
     try {
       // ✅ Correct API call
       const response = await fetch(
-        `https://book-finder-backend.onrender.com/api/books?title=${query}`
+        `https://book-finder-backend-sz1c.onrender.com`
       );
       const data = await response.json();
 
