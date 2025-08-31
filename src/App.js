@@ -15,7 +15,7 @@ function App() {
     setBooks([]);
 
     try {
-      // ✅ Correct API call
+      
       const response = await fetch(
         `https://book-finder-backend-sz1c.onrender.com`
       );
